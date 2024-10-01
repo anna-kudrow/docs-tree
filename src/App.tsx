@@ -1,11 +1,13 @@
-
 import './App.css'
-import Folder from './components/Folder/Folder'
+import { Tree } from './components/Tree/Tree';
+
+interface treeProp{
+  data: IntrinsicAttributes & object;
+}
 
 function App() {
 
-  const documentsList = [
-    {
+  const docsTree = {
       type: 'folder',
       name: 'src',
       children: [
@@ -35,15 +37,15 @@ function App() {
           children: [],
         },
       ]     
-    }
-  ]
-
+    };
 
   return (
-    <>
-     <Folder/>
-    </>
+    <div className='documents-list'>
+      <Tree data={docsTree} />
+    </div>
   )
 }
 
 export default App
+
+
