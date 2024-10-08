@@ -1,51 +1,13 @@
-import './App.css'
-import { Tree } from './components/Tree/Tree';
-
-interface treeProp{
-  data: IntrinsicAttributes & object;
-}
+import "./App.css";
+import { Tree } from "./components/Tree";
+import { docsTree } from "./lib/data";
 
 function App() {
-
-  const docsTree = {
-      type: 'folder',
-      name: 'src',
-      children: [
-        {
-          type: 'file',
-          name: 'app.tsx',
-        },
-        {
-          type: 'folder',
-          name: 'components',
-          children: [
-            {
-              type: 'folder',
-              name: 'pages',
-              children: [
-                {
-                  type: 'file',
-                  name: 'interface.ts'
-                },
-              ]
-            } 
-          ]
-        },
-        {
-          type: 'folder',
-          name: 'ui',
-          children: [],
-        },
-      ]     
-    };
-
-  return (
-    <div className='documents-list'>
-      <Tree data={docsTree} />
-    </div>
-  )
+	return (
+		<div className="documents-list">
+			<Tree node={docsTree} />
+		</div>
+	);
 }
 
-export default App
-
-
+export default App;
